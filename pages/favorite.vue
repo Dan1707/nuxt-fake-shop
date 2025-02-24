@@ -3,6 +3,7 @@ import type { Database } from "~/database.types";
 
 const user = useSupabaseUser();
 const supabase = useSupabaseClient<Database>();
+const store = useGlobalStore();
 
 const isLoading = ref(true);
 
@@ -18,7 +19,7 @@ const fetchFavoriteProducts = async () => {
     if (error) {
       console.error(error);
     }
-    favoriteProducts.value = data;
+    favoriteProducts.value = data?.slice(store.pagStart, store.pagEnd);
   } catch (error) {
     console.log(`Error fetching favorite products: ${error}`);
   } finally {

@@ -2,7 +2,8 @@
 import type { DefineComponent, SlotsType } from 'vue'
 type IslandComponent<T extends DefineComponent> = T & DefineComponent<{}, {refresh: () => Promise<void>}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, SlotsType<{ fallback: { error: unknown } }>>
 interface _GlobalComponents {
-      'LayoutFooter': typeof import("../components/layout/Footer.vue")['default']
+      'Discount': typeof import("../components/discount/index.vue")['default']
+    'LayoutFooter': typeof import("../components/layout/Footer.vue")['default']
     'LayoutHeaderLink': typeof import("../components/layout/Header/Link.vue")['default']
     'LayoutHeader': typeof import("../components/layout/Header/index.vue")['default']
     'Loader': typeof import("../components/loader/index.vue")['default']
@@ -23,7 +24,6 @@ interface _GlobalComponents {
     'NuxtPicture': typeof import("../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']
     'Icon': typeof import("../node_modules/@nuxt/icon/dist/runtime/components/index")['default']
     'ColorScheme': typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
-    'Button': typeof import("../components/ui/button/index")['Button']
     'Checkbox': typeof import("../components/ui/checkbox/index")['Checkbox']
     'Input': typeof import("../components/ui/input/index")['Input']
     'PaginationEllipsis': typeof import("../components/ui/pagination/index")['PaginationEllipsis']
@@ -34,6 +34,7 @@ interface _GlobalComponents {
     'Pagination': typeof import("../components/ui/pagination/index")['Pagination']
     'PaginationList': typeof import("../components/ui/pagination/index")['PaginationList']
     'PaginationListItem': typeof import("../components/ui/pagination/index")['PaginationListItem']
+    'Button': typeof import("../components/ui/button/index")['Button']
     'Select': typeof import("../components/ui/select/index")['Select']
     'SelectContent': typeof import("../components/ui/select/index")['SelectContent']
     'SelectGroup': typeof import("../components/ui/select/index")['SelectGroup']
@@ -58,7 +59,8 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-      'LazyLayoutFooter': typeof import("../components/layout/Footer.vue")['default']
+      'LazyDiscount': typeof import("../components/discount/index.vue")['default']
+    'LazyLayoutFooter': typeof import("../components/layout/Footer.vue")['default']
     'LazyLayoutHeaderLink': typeof import("../components/layout/Header/Link.vue")['default']
     'LazyLayoutHeader': typeof import("../components/layout/Header/index.vue")['default']
     'LazyLoader': typeof import("../components/loader/index.vue")['default']
@@ -79,7 +81,6 @@ interface _GlobalComponents {
     'LazyNuxtPicture': typeof import("../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']
     'LazyIcon': typeof import("../node_modules/@nuxt/icon/dist/runtime/components/index")['default']
     'LazyColorScheme': typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
-    'LazyButton': typeof import("../components/ui/button/index")['Button']
     'LazyCheckbox': typeof import("../components/ui/checkbox/index")['Checkbox']
     'LazyInput': typeof import("../components/ui/input/index")['Input']
     'LazyPaginationEllipsis': typeof import("../components/ui/pagination/index")['PaginationEllipsis']
@@ -90,6 +91,7 @@ interface _GlobalComponents {
     'LazyPagination': typeof import("../components/ui/pagination/index")['Pagination']
     'LazyPaginationList': typeof import("../components/ui/pagination/index")['PaginationList']
     'LazyPaginationListItem': typeof import("../components/ui/pagination/index")['PaginationListItem']
+    'LazyButton': typeof import("../components/ui/button/index")['Button']
     'LazySelect': typeof import("../components/ui/select/index")['Select']
     'LazySelectContent': typeof import("../components/ui/select/index")['SelectContent']
     'LazySelectGroup': typeof import("../components/ui/select/index")['SelectGroup']
@@ -120,6 +122,7 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
+export const Discount: typeof import("../components/discount/index.vue")['default']
 export const LayoutFooter: typeof import("../components/layout/Footer.vue")['default']
 export const LayoutHeaderLink: typeof import("../components/layout/Header/Link.vue")['default']
 export const LayoutHeader: typeof import("../components/layout/Header/index.vue")['default']
@@ -141,7 +144,6 @@ export const NuxtImg: typeof import("../node_modules/@nuxt/image/dist/runtime/co
 export const NuxtPicture: typeof import("../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']
 export const Icon: typeof import("../node_modules/@nuxt/icon/dist/runtime/components/index")['default']
 export const ColorScheme: typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
-export const Button: typeof import("../components/ui/button/index")['Button']
 export const Checkbox: typeof import("../components/ui/checkbox/index")['Checkbox']
 export const Input: typeof import("../components/ui/input/index")['Input']
 export const PaginationEllipsis: typeof import("../components/ui/pagination/index")['PaginationEllipsis']
@@ -152,6 +154,7 @@ export const PaginationPrev: typeof import("../components/ui/pagination/index")[
 export const Pagination: typeof import("../components/ui/pagination/index")['Pagination']
 export const PaginationList: typeof import("../components/ui/pagination/index")['PaginationList']
 export const PaginationListItem: typeof import("../components/ui/pagination/index")['PaginationListItem']
+export const Button: typeof import("../components/ui/button/index")['Button']
 export const Select: typeof import("../components/ui/select/index")['Select']
 export const SelectContent: typeof import("../components/ui/select/index")['SelectContent']
 export const SelectGroup: typeof import("../components/ui/select/index")['SelectGroup']
@@ -176,6 +179,7 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
+export const LazyDiscount: typeof import("../components/discount/index.vue")['default']
 export const LazyLayoutFooter: typeof import("../components/layout/Footer.vue")['default']
 export const LazyLayoutHeaderLink: typeof import("../components/layout/Header/Link.vue")['default']
 export const LazyLayoutHeader: typeof import("../components/layout/Header/index.vue")['default']
@@ -197,7 +201,6 @@ export const LazyNuxtImg: typeof import("../node_modules/@nuxt/image/dist/runtim
 export const LazyNuxtPicture: typeof import("../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']
 export const LazyIcon: typeof import("../node_modules/@nuxt/icon/dist/runtime/components/index")['default']
 export const LazyColorScheme: typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
-export const LazyButton: typeof import("../components/ui/button/index")['Button']
 export const LazyCheckbox: typeof import("../components/ui/checkbox/index")['Checkbox']
 export const LazyInput: typeof import("../components/ui/input/index")['Input']
 export const LazyPaginationEllipsis: typeof import("../components/ui/pagination/index")['PaginationEllipsis']
@@ -208,6 +211,7 @@ export const LazyPaginationPrev: typeof import("../components/ui/pagination/inde
 export const LazyPagination: typeof import("../components/ui/pagination/index")['Pagination']
 export const LazyPaginationList: typeof import("../components/ui/pagination/index")['PaginationList']
 export const LazyPaginationListItem: typeof import("../components/ui/pagination/index")['PaginationListItem']
+export const LazyButton: typeof import("../components/ui/button/index")['Button']
 export const LazySelect: typeof import("../components/ui/select/index")['Select']
 export const LazySelectContent: typeof import("../components/ui/select/index")['SelectContent']
 export const LazySelectGroup: typeof import("../components/ui/select/index")['SelectGroup']

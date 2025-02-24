@@ -45,7 +45,7 @@ const arrowFunc = (action: string) => {
 <template>
   <div
     class="flex items-center justify-center"
-    v-if="arrLength > store.productsQuantity"
+    v-if="arrLength >= store.productsQuantity"
   >
     <Pagination
       v-slot="{ page }"
